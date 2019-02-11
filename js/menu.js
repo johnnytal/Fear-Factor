@@ -3,7 +3,7 @@ GAME.Menu = function(game) {};
 GAME.Menu.prototype = {
     create: function() {
         this.add.image(0, 0, 'menuBG');
-        this.startButton = game.add.button((game.width/2) - 216, 370, 'menuPlay', this.startGame, this);
+        this.startButton = game.add.button((game.width/2) - 243, 360, 'menuPlay', this.startGame, this);
         this.infoButton = this.add.button((game.width/2) - 170, this.startButton.y + 110, 'menuScores', this.startScores, this);
         this.soundButton = this.add.button((game.width/2) - 127, this.infoButton.y + 110, 'menuSoundOn', this.toggleSound, this);
 

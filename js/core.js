@@ -5,9 +5,6 @@ var gameStop = false;
 var enemiesDestroyed = 0;
 var enemiesBonus = 0;
 
-accelX = 0;
-accelY = 0;
-
 // Setup the example
 GAME.Main.prototype = {
     create: function () {
@@ -35,11 +32,9 @@ GAME.Main.prototype = {
 
         // Simulate a pointer click/tap input at the center of the stage
         // when the example begins running.
-        accelX = 10;
-        accelY = 10;
 
-       /* game.input.activePointer.x = this.game.width / 2;
-        game.input.activePointer.y = this.game.height / 2;*/
+        game.input.activePointer.x = this.game.width / 2;
+        game.input.activePointer.y = this.game.height / 2;
 
         // Show FPS
         game.time.advancedTiming = true;
@@ -123,12 +118,8 @@ GAME.Main.prototype = {
         }
         this.shadowTexture.context.fillRect(0, 0, this.game.width, this.game.height);
 
-        var posY = accelY * (game.world.height / 20);
-        if (!this.game.device.desktop) {
-            posY = accelY * (game.world.height / 20) - (this.LIGHT_RADIUS/2);
-        }
-        
-        var poX = accelX * (game.world.width / 20);
+        var posY = game.input.activePointer.y;
+        var poX = game.input.activePointer.x;
 
         // Draw circle of light with a soft edge
         var gradient = this.shadowTexture.context.createRadialGradient(
