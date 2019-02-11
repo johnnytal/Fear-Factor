@@ -8,7 +8,6 @@ var enemiesBonus = 0;
 accelX = 0;
 accelY = 0;
 
-
 // Setup the example
 GAME.Main.prototype = {
     create: function () {
@@ -41,10 +40,6 @@ GAME.Main.prototype = {
 
        /* game.input.activePointer.x = this.game.width / 2;
         game.input.activePointer.y = this.game.height / 2;*/
-
-        if (!this.game.device.desktop) {
-
-        }
 
         // Show FPS
         game.time.advancedTiming = true;
@@ -100,14 +95,9 @@ GAME.Main.prototype = {
 
         game.world.bringToTop(numberLabel);
         game.world.bringToTop(scoreLabel);
-        
-        watchReading();
+ 
     },
     update: function () {
-        if (this.game.time.fps !== 0) {
-            //this.fpsText.setText(this.game.time.fps + ' FPS');
-        }
-
         // Update the shadow texture each frame
         this.updateShadowTexture(blast);
     },
@@ -159,24 +149,7 @@ GAME.Main.prototype = {
         game.world.bringToTop(numberLabel);
         game.world.bringToTop(scoreLabel);
     },
-    render: function () {
-
-    }
-};
-
-function watchReading(){
-    watchID = navigator.accelerometer.watchAcceleration(readAccel, onError, { frequency: 20 });
-}
-
-function onError() {
-    alert('No acceleration reading detected!');
-};
-
-function readAccel() {
-    accelX = acceleration.x + 10;
-    if (accelX > 20) accelX = 20;
-    accelY = acceleration.y + 10;
-    if (accelY > 20) accelY = 20;
+    render: function () {}
 };
 
 /**

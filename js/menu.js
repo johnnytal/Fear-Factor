@@ -1,11 +1,7 @@
-
-GAME.Menu = function(game) {
-
-};
+GAME.Menu = function(game) {};
 
 GAME.Menu.prototype = {
     create: function() {
-
         this.add.image(0, 0, 'menuBG');
         this.startButton = game.add.button((game.width/2) - 216, 370, 'menuPlay', this.startGame, this);
         this.infoButton = this.add.button((game.width/2) - 170, this.startButton.y + 110, 'menuScores', this.startScores, this);
@@ -13,18 +9,6 @@ GAME.Menu.prototype = {
 
         this.scoresButton = this.add.button((game.width/2) - 184, this.soundButton.y + 110, 'menuInfo', this.startInfo, this);
 
-        //this.add.image( (game.width/2) - 160, 300, 'logo');
-        /*this.play = this.game.add.text(
-            (game.width/2) + 120, 200, 'PLAY', {
-                font: '48px nothing_you_could_doregular',
-                fill: '#000000',
-                fontWeight: 'bold'
-            }
-        );*/
-        // instructions = this.game.add.text(
-        //  60, 250, "Use arrow keys on desktop, \n  accelerometer on mobile",
-        //  { font: "16px Arial", fill: "#b921fe", stroke: "#22053a", strokeThickness: 3 }
-        // );
         reg.track = game.add.audio('track');
         reg.track.loop = true;
 

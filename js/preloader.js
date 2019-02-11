@@ -81,11 +81,6 @@ GAME.Preloader.prototype = {
         this.load.audio('voice5', 'assets/audio/voice5.ogg');
         
         this.load.audio('laugh', 'assets/audio/laugh.ogg');
-
-
-       // this.load.image("monster7", "assets/monster7.png");
-
-       // this.load.audio('track', ['assets/audio/AJEX063.mp3']);
     },
     create: function () {
         getLocalSave();
@@ -94,7 +89,6 @@ GAME.Preloader.prototype = {
 };
 
 function getLocalSave() {
-
     var result = localStorage.getItem("nightcast-levels");
 
     if(result === null || result === undefined) {
